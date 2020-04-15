@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row">
+    <div  class="col-sm-12 col-md-6 col-lg-3" *ngFor="let item of dets"> 
+        <div class="card" style="margin: 5px;" [hidden]="!item.show">
+            <div class="card-body" *ngIf="item.status === true" style="background: green;">
+              <h5 class="card-title">{{item.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">status: {{item.status}}</h6>
+              <p class="card-text">id: {{item.id}}</p>
+              <button (click)="item.show=false"> Delete</button>
+            </div>
+            <div class="card-body" *ngIf="item.status === false" style="background: red;">
+              <h5 class="card-title">{{item.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">status: {{item.status}}</h6>
+              <p class="card-text">id: {{item.id}}</p>
+              <button (click)="item.show = false"> Delete</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <button (click)="addDet()">Добавить датчик</button>
+</div>
+
